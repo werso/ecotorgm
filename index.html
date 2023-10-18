@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 
     <meta name="theme-color" content="#fafafa">
@@ -70,22 +71,22 @@
                 <div class="menu-content">
                     <ul class="menu-list">
                         <li class="menu-list-item">
-                            <a href="#" class="menu-list-item-link">
+                            <a href="#about" class="menu-list-item-link">
                                 О компании
                             </a>
                         </li>
                         <li class="menu-list-item">
-                            <a href="#" class="menu-list-item-link">
+                            <a href="#jobs" class="menu-list-item-link">
                                 Вакансии
                             </a>
                         </li>
                         <li class="menu-list-item">
-                            <a href="#" class="menu-list-item-link">
+                            <a href="#offers" class="menu-list-item-link">
                                 Ценности
                             </a>
                         </li>
                         <li class="menu-list-item">
-                            <a href="#" class="menu-list-item-link">
+                            <a href="#feedback" class="menu-list-item-link">
                                 Контакты
                             </a>
                         </li>
@@ -109,9 +110,9 @@
                     </span>
                 </a>
             </div>
-            <button class="btn btn-rounded btn-orange header-line-feedback-btn">
+            <a href="#modal-feedback" class="btn btn-rounded btn-orange header-line-feedback-btn" data-fancybox>
                 Связаться
-            </button>
+            </a>
         </div>
     </div>
 </header>
@@ -182,7 +183,8 @@
     </div>
 
 </section>
-<section class="section-numbs py">
+
+<section class="section-numbs py" id="about">
     <div class="container">
         <div class="heading">
             О нас в цифрах
@@ -242,7 +244,7 @@
         </div>
     </div>
 </section>
-<section class="section-jobs py">
+<section class="section-jobs py" id="jobs">
     <div class="container">
         <div class="heading section-jobs-heading">Сейчас нам нужны</div>
 
@@ -633,8 +635,7 @@
         </p>
     </div>
 </section>
-
-<section class="section-offers py">
+<section class="section-offers py" id="offers">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -693,7 +694,7 @@
         </div>
     </div>
 </section>
-<section class="section-feedback" style="background-image: url(img/secrion-feedback-bg.jpg)">
+<section class="section-feedback" style="background-image: url(img/secrion-feedback-bg.jpg)" id="feedback">
     <div class="container">
         <div class="heading section-feedback-heading">
             Нет подходящей вакансии?
@@ -808,17 +809,17 @@
             <div class="footer-menu">
                 <ul class="menu-list">
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item-link">
+                        <a href="#jobs" class="menu-list-item-link">
                             Вакансии
                         </a>
                     </li>
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item-link">
+                        <a href="#offers" class="menu-list-item-link">
                             Ценности
                         </a>
                     </li>
                     <li class="menu-list-item">
-                        <a href="#" class="menu-list-item-link">
+                        <a href="#feedback" class="menu-list-item-link">
                             Контакты
                         </a>
                     </li>
@@ -849,7 +850,7 @@
                 </div>
             </div>
             <div class="footer-feedback">
-                <button class="btn btn-rounded btn-secondary">Связаться</button>
+                <a href="#modal-feedback" class="btn btn-rounded btn-secondary" data-fancybox>Связаться</a>
 
                 <div class="footer-social social">
                     <ul class="social-list">
@@ -895,8 +896,34 @@
     </div>
 </footer>
 
+<div class="modal modal_feedback" id="modal-feedback" style="display: none">
+    <div class="heading">Обратная связь</div>
+    <form class="form">
+        <div class="form-group">
+            <input type="text" placeholder="ФИО">
+        </div>
+        <div class="form-group">
+            <input type="tel" placeholder="Телефон">
+        </div>
+        <div class="form-group">
+            <textarea placeholder="Сообщение"></textarea>
+        </div>
+        <div class="form-group form-group_submit">
+            <button type="submit" class="btn btn-rounded btn-secondary btn-w100 form-submit">
+                Отправить
+            </button>
+        </div>
+        <div class="form-privacy-text">
+            Нажимая на кнопку "Отправить" Вы соглашаетесь с <a href="#">Политикой
+            конфиденциальности</a>
+            и <a href="#">Пользовательским соглашением</a>
+        </div>
+    </form>
+</div>
+
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/vendor/imask.min.js"></script>
+<script src="js/vendor/fancybox.min.js"></script>
 <script src="js/script.min.js"></script>
 </body>
 

@@ -243,6 +243,7 @@ html, body {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
+    text-decoration: none;
 
     @include transition();
 
@@ -258,11 +259,19 @@ html, body {
     &-secondary {
         background: var(--color-secondary);
         color: white;
+
+        &:hover {
+            color: white;
+        }
     }
 
     &-white {
         color: var(--color-secondary);
         background: white;
+
+        &:hover {
+            background: white;
+        }
     }
 
     &-rounded {
@@ -331,8 +340,8 @@ html, body {
     position: relative;
     z-index: 1;
     height: 100px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    //display: -webkit-box;
+    //display: -ms-flexbox;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -363,6 +372,11 @@ a {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+.section-text {
+    font-size: 18px;
+    line-height: 1.2em;
 }
 
 .form {
@@ -397,8 +411,53 @@ a {
         input[type=text],
         input[type=tel],
         input[type=email],
-        textarea {
+        textarea,
+        select {
             width: 100%;
+            border: 0;
+            border-bottom: 1px solid var(--color-heading);
+            padding: 10px 0;
+            background: none;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 21px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: var(--color-heading);
+            opacity: 1; /* Firefox */
+        }
+
+        input::-ms-input-placeholder,
+        textarea::-ms-input-placeholder { /* Edge 12 -18 */
+            color: var(--color-heading);
+        }
+
+        &_submit {
+            margin-bottom: 20px;
+        }
+
+        &_file {
+            label {
+                width: 100%;
+                border-bottom: 1px solid var(--color-heading);
+                color: var(--color-heading);
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21px;
+                padding: 10px 0;
+
+                .icon {
+                    path {
+                        stroke: var(--color-heading);
+                    }
+                }
+            }
         }
     }
 
@@ -454,12 +513,21 @@ a {
                     &:hover {
                         opacity: 1;
                     }
+
+                    .icon {
+                        path {
+                            stroke: white;
+                        }
+                    }
                 }
             }
         }
 
-        input,
-        textarea {
+        input[type=text],
+        input[type=tel],
+        input[type=email],
+        textarea,
+        select {
             border-top: 0;
             border-left: 0;
             border-right: 0;
@@ -996,11 +1064,6 @@ a {
     }
 }
 
-.section-text {
-    font-size: 18px;
-    line-height: 1.2em;
-}
-
 .section-jobs {
     &-heading {
         margin-bottom: 60px;
@@ -1479,6 +1542,20 @@ a {
                 }
             }
         }
+    }
+}
+.modal {
+    background: var(--color-light-gray);
+    padding: 60px 40px;
+    border-radius: 10px;
+
+    &_feedback {
+        width: 484px;
+        max-width: 100%;
+    }
+
+    .heading {
+        margin-bottom: 40px;
     }
 }
 

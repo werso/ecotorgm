@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('[name=PHONE], [type="tel"]').forEach(phone => {
         IMask(phone, iMaskParams);
     });
+    Fancybox.bind();
 
     document.querySelectorAll('.menu').forEach(menu => {
         let body = document.querySelector('body');

@@ -204,6 +204,7 @@ html.main header, body.main header {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
+  text-decoration: none;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -220,8 +221,14 @@ html.main header, body.main header {
   background: var(--color-secondary);
   color: white;
 }
+.btn-orange:hover, .btn-secondary:hover {
+  color: white;
+}
 .btn-white {
   color: var(--color-secondary);
+  background: white;
+}
+.btn-white:hover {
   background: white;
 }
 .btn-rounded {
@@ -274,8 +281,6 @@ html.main header, body.main header {
   position: relative;
   z-index: 1;
   height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -303,6 +308,11 @@ a:hover {
   overflow: hidden;
 }
 
+.section-text {
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
 .form-group {
   margin-bottom: 30px;
 }
@@ -328,8 +338,47 @@ a:hover {
 .form-group input[type=text],
 .form-group input[type=tel],
 .form-group input[type=email],
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--color-heading);
+  padding: 10px 0;
+  background: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+}
+.form-group input[type=text]:focus,
+.form-group input[type=tel]:focus,
+.form-group input[type=email]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-heading);
+  opacity: 1; /* Firefox */
+}
+.form-group input::-ms-input-placeholder,
+.form-group textarea::-ms-input-placeholder { /* Edge 12 -18 */
+  color: var(--color-heading);
+}
+.form-group_submit {
+  margin-bottom: 20px;
+}
+.form-group_file label {
+  width: 100%;
+  border-bottom: 1px solid var(--color-heading);
+  color: var(--color-heading);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  padding: 10px 0;
+}
+.form-group_file label .icon path {
+  stroke: var(--color-heading);
 }
 .form-submit {
   padding: 20px 25px;
@@ -379,8 +428,14 @@ a:hover {
 .form_white .form-group_file label:hover {
   opacity: 1;
 }
-.form_white input,
-.form_white textarea {
+.form_white .form-group_file label .icon path {
+  stroke: white;
+}
+.form_white input[type=text],
+.form_white input[type=tel],
+.form_white input[type=email],
+.form_white textarea,
+.form_white select {
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -394,9 +449,15 @@ a:hover {
   outline: none;
   opacity: 0.6;
 }
-.form_white input:focus, .form_white input:hover,
+.form_white input[type=text]:focus, .form_white input[type=text]:hover,
+.form_white input[type=tel]:focus,
+.form_white input[type=tel]:hover,
+.form_white input[type=email]:focus,
+.form_white input[type=email]:hover,
 .form_white textarea:focus,
-.form_white textarea:hover {
+.form_white textarea:hover,
+.form_white select:focus,
+.form_white select:hover {
   opacity: 1;
 }
 .form_white input::placeholder,
@@ -831,11 +892,6 @@ a:hover {
   stroke: var(--color-secondary);
 }
 
-.section-text {
-  font-size: 18px;
-  line-height: 1.2em;
-}
-
 .section-jobs-heading {
   margin-bottom: 60px;
 }
@@ -1215,6 +1271,19 @@ a:hover {
 .social-list-item-link .icon {
   width: 32px;
   height: 32px;
+}
+
+.modal {
+  background: var(--color-light-gray);
+  padding: 60px 40px;
+  border-radius: 10px;
+}
+.modal_feedback {
+  width: 484px;
+  max-width: 100%;
+}
+.modal .heading {
+  margin-bottom: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
